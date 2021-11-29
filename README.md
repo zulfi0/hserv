@@ -5,8 +5,6 @@ Currently support GET, POST and 302 Redirect.
 
 I hope it will help you in testing SSRF while you do Bug bounty hunter.
 
-> Note : Only use for basic testing.
-
 ## Installation
 1. Clone this project
 ```
