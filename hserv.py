@@ -34,7 +34,7 @@ class Handler(SimpleHTTPRequestHandler):
         else :
             logging.info(f'\nGET {self.path} {self.request_version}\n{self.headers}')
             self.sen_response()
-            self.wfile.write("abcdefghijklmnopqrstivwxyz")
+            self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
 
     def do_POST(self):
         content_len = int(self.headers['Content-Length'])
@@ -44,7 +44,7 @@ class Handler(SimpleHTTPRequestHandler):
         print(post_body.decode('utf-8'))
 
         self.sen_response()
-        self.wfile.write("abcdefghijklmnopqrstivwxyz")
+        self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
 
 httpd = TCPServer(("", PORT), Handler)
 
