@@ -5,6 +5,12 @@ Currently support GET, HEAD, POST and 302 Redirect.
 
 I hope it will help you in testing SSRF while you do Bug bounty hunter.
 
+UPDATE :
+- Add new banners !
+- Add HEAD method
+- Now automatically save the log in log.txt format
+- Cleaner Message !
+
 ## Installation
 1. Clone this project
 ```
@@ -35,10 +41,3 @@ REDIRECT :
 
 HEAD :
 ![HEAD](https://user-images.githubusercontent.com/68773572/144163381-5aa61fb7-b436-4b16-ac9b-6b1078c081c3.jpg)
-
-
-UPDATE :
-- Add new banners !
-- Add HEAD method
-- Now automatically save the log in log.txt format
-- Cleaner Message !
