@@ -67,14 +67,22 @@ class Handler(SimpleHTTPRequestHandler):
             self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
 
     def do_POST(self):
-        content_len = int(self.headers["Content-Length"])
-        post_body = self.rfile.read(content_len)
+        #handle empty data
+        try :
+            content_len = int(self.headers["Content-Length"])
+            post_body = self.rfile.read(content_len)
 
-        logging.info(f"\nPOST {self.path} {self.request_version}\n{self.headers}\n{post_body.decode('utf-8')}\n")
-        #print(post_body.decode('utf-8'))
+            logging.info(f"\nPOST {self.path} {self.request_version}\n{self.headers}\n{post_body.decode('utf-8')}\n")
+            #print(post_body.decode('utf-8'))
 
-        self.sen_response()
-        self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
+            self.sen_response()
+            self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
+
+        except Exception :
+            logging.info(f"\nPOST {self.path} {self.request_version}\n{self.headers}\n")
+
+            self.sen_response()
+            self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
 
     def do_HEAD(self):
         logging.info(f'\nHEAD {self.path} {self.request_version}\n{self.headers}')
