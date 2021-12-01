@@ -1,7 +1,7 @@
 # hserv
 
 Simple python http server that logs incoming requests.
-Currently support GET, POST and 302 Redirect.
+Currently support GET, HEAD, POST and 302 Redirect.
 
 I hope it will help you in testing SSRF while you do Bug bounty hunter.
 
@@ -11,14 +11,14 @@ I hope it will help you in testing SSRF while you do Bug bounty hunter.
 git clone https://github.com/zulfi0/hserv
 ```
 2. Run
-```python
-python3 hserv.py
+```bash
+cd hserv && cp hserv.py /usr/bin && hserv
 ```
 ## Usage
 Simply run the script with -p switch.
 
-```python
-python3 hserv.py -p 80
+```bash
+hserv -p 80
 ```
 The server should started on port 80
 >For trigger the redirect add /redirect in your path ie. https://example.com/redirect=https://foo.bar/
@@ -42,4 +42,3 @@ UPDATE :
 - Add HEAD method
 - Now automatically save the log in log.txt format
 - Cleaner Message !
-
