@@ -16,7 +16,11 @@ UPDATE :
 ```
 git clone https://github.com/zulfi0/hserv
 ```
-2. Run
+2.Install Module
+ ```bash
+ python3 -m pip install colorama
+ ```
+3. Run
 ```bash
 cd hserv && cp hserv.py /usr/bin && hserv
 ```
