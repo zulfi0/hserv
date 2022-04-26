@@ -64,7 +64,7 @@ class Handler(SimpleHTTPRequestHandler):
         else :
             logging.info(f'\nGET {self.path} {self.request_version}\n{self.headers}')
             self.sen_response()
-            self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
+            self.wfile.write("This is GET Request".encode("utf-8"))
 
     def do_POST(self):
         #handle empty data
@@ -76,25 +76,24 @@ class Handler(SimpleHTTPRequestHandler):
             #print(post_body.decode('utf-8'))
 
             self.sen_response()
-            self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
+            self.wfile.write("POST request".encode("utf-8"))
 
         except Exception :
             logging.info(f"\nPOST {self.path} {self.request_version}\n{self.headers}\n")
 
             self.sen_response()
-            self.wfile.write("abcdefghijklmnopqrstivwxyz".encode("utf-8"))
+            self.wfile.write("POST request.".encode("utf-8"))
 
     def do_HEAD(self):
         logging.info(f'\nHEAD {self.path} {self.request_version}\n{self.headers}')
         self.sen_response()
 
+        
 httpd = TCPServer(("", PORT), Handler)
 
 try :
     print(Style.BRIGHT+Fore.GREEN+f'Server start on ::{PORT}'+Style.BRIGHT+Fore.RESET)
     httpd.serve_forever()
 except KeyboardInterrupt :
-    pass
-
-httpd.server_close()
-print(Style.BRIGHT+Fore.RED+'\nServer stopped'+Style.BRIGHT+Fore.RESET)
+    httpd.server_close()
+    print(Style.BRIGHT+Fore.RED+'\nServer stopped'+Style.BRIGHT+Fore.RESET)
