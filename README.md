@@ -42,3 +42,4 @@ Simply run the script with -p switch.
 ```bash
 hserv -p 80
 ```
+and don't forget to fire up ngrok.
