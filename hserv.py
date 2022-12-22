@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 from http.server import SimpleHTTPRequestHandler
 from socketserver import TCPServer
