@@ -1,5 +1,5 @@
 # hserv
-this toll is obsolete use https://github.com/zulfi0/fserv for replacement.
+this tool is obsolete use https://github.com/zulfi0/fserv for replacement.
 
 Simple python http server that logs incoming requests.
 Currently support GET, HEAD, POST and 302 Redirect and logs all incoming requests to log.txt file.
